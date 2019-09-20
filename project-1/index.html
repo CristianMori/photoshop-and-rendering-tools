@@ -1,17 +1,69 @@
 <!doctype html>
 <html>
   <head>
-    <title>This is the title of the webpage!</title>
+    <title>Kazuki Shin Project 1</title>
   </head>
   <body>
     <h1>Kazuki Shin | CS 445: Project #1 Hybrid Images</h1>
     <h2>Part I: Hybrid Images</h2>
-      <img border="0" width="120" height="150" src="index_files/me.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
-    <h3>Explaination of Results</h3>
+      <h3>Favorite Hybrid Image</h3>
+        <img border="0"  src="data/hybrid1-1.png" alt="Description: Input" v:shapes="Picture_x0020_4">
+        <figcaption>^ Input images for favorite hybrid image</figcaption>
+        <img border="0"  src="data/hybrid1-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Filtered images for favorite hybrid image</figcaption>
+        <img border="0"  src="data/hybrid1-3.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Final hybrid image</figcaption>
+      <h3>FFTs for input, filtered, and hybrid images</h3>
+        <img border="0"  src="data/fft1.png" alt="Description: Input" v:shapes="Picture_x0020_4">
+        <figcaption>^ FFT of Input Images for favorite hybrid image</figcaption>
+        <img border="0"  src="data/fft2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ FFT of Filtered Images for favorite hybrid image</figcaption>
+        <img border="0"  src="data/fft3.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ FFT of Final hybrid image</figcaption>
+      <h3>Explaination of results for first image</h3>
+      This hybrid imaging works by first taking two images and lining them up in a way so that it is visually appealing.
+      In my case, I took a clever approach by lining up the retina of the eye to the retina of the camera lens which gave it a very cool and mesmerizing effect.
+      Then you pass one image into a high pass filter and another in a low pass filter. The high pass filter gave the image a very
+      textured and contrasted look, while the low pass filter gave the image a blurry look. After combining the two images, the resulting
+      hybrid image looked great!
+
+      <h3>Second Good Hybrid Image</h3>
+        <img border="0"  src="data/hybrid2-1.png" alt="Description: Input" v:shapes="Picture_x0020_4">
+        <figcaption>^ Input images for second hybrid image</figcaption>
+        <img border="0"  src="data/hybrid2-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Filtered images for second hybrid image</figcaption>
+        <img border="0"  src="data/hybrid2-3.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Final hybrid image</figcaption>
+      <h3>Explaination of results for second image</h3>
+      For this pair of images, I tried to be creative by choosing two images in which the subject was posing.
+      This was rather effective as the human figures of both images made it easy for the viewer to see both
+      low and high pass images in the hybrid image. Overall, this set came out with very nice results.
+
+      <h3>Bad HybridImage</h3>
+        <img border="0"  src="data/hybrid3-1.png" alt="Description: Input" v:shapes="Picture_x0020_4">
+        <figcaption>^ Input images for bad hybrid image</figcaption>
+        <img border="0"  src="data/hybrid3-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Filtered images for bad hybrid image</figcaption>
+        <img border="0"  src="data/hybrid3-3.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Bad hybrid image</figcaption>
+      <h3>Explaination of results for third image</h3>
+      I initially chose these images since both the helicopter and seal body shapes were similar.
+      However, since the helicopter is so detailed and the seal had little to no contrast, it was
+      almost impossible to see the seal in the hybrid image making this a failure case. Another reason
+      could be because this case does not have eyes in which I could line up the images with.
+
     <h2>Part II: Image Enhancement</h2>
-    <h3>Contrast Enhancement</h3>
-    <h3>Color Enhancement</h3>
+      <h3>Contrast Enhancement</h3>
+        <img border="0"  src="data/contrast.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>Increased contrast of the image by using cv2.equalizeHist(img)</figcaption>
+      <h3>Color Enhancement</h3>
+      <img border="0"  src="data/sat.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>Converted image to HSV then increased the color brightness by increasing just the saturation channel.</figcaption>
     <h2>Bells and Whistles</h2>
-    <h3>Color Shift</h3>
+      <h3>Color Shift</h3>
+      <img border="0"  src="data/red.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ Converted image to LAB then increased A channel to make image more red.</figcaption>
+      <img border="0"  src="data/yellow.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ Converted image to LAB then decreased the B channel to make image less yellow.</figcaption>
   </body>
 </html>
