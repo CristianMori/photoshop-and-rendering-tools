@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kazuki Shin Project 2</title>
+  </head>
+  <body>
+    <h1>Kazuki Shin | CS 445: Project #2 Quilting</h1>
+    <h2>Best Example with sample, random, overlapping, and seam finding</h2>
+        <img border="0"  src="data/pattern1.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Sample Image</figcaption>
+        <img border="0"  src="data/bestrand.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Random </figcaption>
+        <img border="0"  src="data/bestquilt.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Quilt Simple</figcaption>
+        <img border="0"  src="data/bestseam.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Seam Cut</figcaption>
+
+      <h3>Explaination of results for Best Example</h3>
+      My random function was very bad at creating the new texture as expected since there is no algorithm or <br>
+      logic behind the choice of each patch. My overlapping result was alot better than random thanks to SSD,<br>
+      however it is evident that many of the patches do not line up perfectly and the patches are visible. The<br>
+      seam finding output image was close to perfect. The output texture looks smooth and natural thanks to the <br>
+      cut function which finds the path of smallest cost. I found my particular sample to be challenging since it was a <br>
+      black image with thin white lines so you could easily tell when the image did not line up. After some tweaking <br>
+      of the parameters, the outputs were smooth.
+
+      <h2>4 Additional Images with Seam Finding</h2>
+
+        <img border="0"  src="data/p1.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Sample #1</figcaption>
+        <img border="0"  src="data/p1-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Seam #1</figcaption>
+
+      <img border="0"  src="data/p2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Sample #2</figcaption>
+        <img border="0"  src="data/p2-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Seam #2</figcaption>
+
+      <img border="0"  src="data/p3.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Sample #3</figcaption>
+        <img border="0"  src="data/p3-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Seam #3</figcaption>
+
+      <img border="0"  src="data/p4.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Sample #4</figcaption>
+        <img border="0"  src="data/p4-2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Seam #4</figcaption>
+
+      <h3>Explaination of Results</h3>
+      The images above take a sample image and quilt the output using cut. The cut function maps a path with <br>
+      the lowest cost so that the quilting will look the smoothest. The SSD function is able to get the most similar<br>
+      patch and overlay it onto the out image.<br>
+
+    <h2>Seam Finding with minimum cost path</h2>
+      <h3>Left Side Image Template</h3>
+      <img border="0"  src="data/left1.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Right Side Sample Patch</h3>
+      <img border="0"  src="data/right1.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Shortest Path Mapped</h3>
+      <img border="0"  src="data/path1.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Combined Result</h3>
+      <img border="0"  src="data/combined1.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+
+      <h2>Part IV: Texture Transfer </h2>
+
+      <h3>Explaination of Texture Transfer</h3>
+      The texture transfer works by calculating the SSD between the image patch and sample path, the SSD between <br>
+      image patch and target patch then summing the two values to create an image that has the look of the target Image <br>
+      but the texture of the sample image.
+
+      <h3>Target Image 1</h3>
+        <img border="0"  src="data/i.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Sample Image 1</h3>
+      <img border="0"  src="data/rainbow.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Output Image 1</h3>
+      <img border="0"  src="data/i_3.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+
+      <h3>Target Image 2</h3>
+        <img border="0"  src="data/face.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Sample Image 2</h3>
+      <img border="0"  src="data/sketch.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <h3>Output Image 2</h3>
+      <img border="0"  src="data/text2.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+
+  </body>
+</html>
