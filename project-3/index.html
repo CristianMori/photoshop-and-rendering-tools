@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kazuki Shin Project 3</title>
+  </head>
+  <body>
+    <h1>Kazuki Shin | CS 445: Project #3 Gradient-Domain Fusion</h1>
+    <h2>Favorite blending result</h2>
+        <img border="0"  src="data/roadster2.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Source Image</figcaption>
+        <img border="0"  src="data/space.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ Target Image </figcaption>
+        <img border="0"  src="data/car_before.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ blended image with the source pixels directly copied into the target region</figcaption>
+        <img border="0"  src="data/car_after.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+        <figcaption>^ final blend result</figcaption>
+
+      <h3>Explaination of results for Best Example</h3>
+      Poisson blending works by putting contraints on each individual pixel based off the pixel values
+      of its neighbors. By getting the neighboring values from either the source or target image, the resulting
+      belnded image is a smooth and naturally existing source image within the target image. To make the blending
+      more natural, I focused on the coloring of the target and source image. The more different the colors were, the
+      better the poisson blending was.
+
+      <h2>Another Successful Example</h2>
+
+      <img border="0"  src="data/sc.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ Source Image</figcaption>
+      <img border="0"  src="data/ocean.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ Target Image </figcaption>
+      <img border="0"  src="data/sc_before.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ blended image with the source pixels directly copied into the target region</figcaption>
+      <img border="0"  src="data/sc_after.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ final blend result</figcaption>
+
+      <h3>Explaination of Results</h3>
+      Poisson blending works by putting contraints on each individual pixel based off the pixel values
+      of its neighbors. By getting the neighboring values from either the source or target image, the resulting
+      belnded image is a smooth and naturally existing source image within the target image. To make the blending
+      more natural, I focused on the coloring of the target and source image. The more different the colors were, the
+      better the poisson blending was.<br>
+
+      <h2>Failure Example</h2>
+
+      <img border="0"  src="data/pop.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ Source Image</figcaption>
+      <img border="0"  src="data/snek.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ Target Image </figcaption>
+      <img border="0"  src="data/snekpop_before.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ blended image with the source pixels directly copied into the target region</figcaption>
+      <img border="0"  src="data/snekpop_after.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+      <figcaption>^ final blend result</figcaption>
+
+      <h3>Explaination of Results</h3>
+      The example was my favorite image but was also the failure case bacause of the certain patches
+      that did not blend in well. This occured whenever the main suject within the background image
+      overlapped with the source image. Blending the border with mire complicated textures creates obvious
+      spots along the blending lines, thus making it a failure case.<br>
+
+    <h2>Mixed Gradient Example</h2>
+    <img border="0"  src="data/ball.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+    <figcaption>^ Source Image</figcaption>
+    <img border="0"  src="data/seal.jpg" alt="Description: Me" v:shapes="Picture_x0020_4">
+    <figcaption>^ Target Image </figcaption>
+    <img border="0"  src="data/ball_before.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+    <figcaption>^ blended image with the source pixels directly copied into the target region</figcaption>
+    <img border="0"  src="data/ball_after.png" alt="Description: Me" v:shapes="Picture_x0020_4">
+    <figcaption>^ final blend result</figcaption>
+
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kazuki Shin Project 4</title>
+  </head>
+  <body>
+    <h1>Kazuki Shin | CS 445: Project #4 Image-Based Lighting</h1>
+    <h2>Partner: Kshitij Gupta, kg9, http://kg9.web.illinois.edu/cs445/proj4/index.html </h2>
+    <h2>Original Images</h2>
+    <h3>Background</h3>
+    <img src="data/back1.jpg" alt="Image" width="400px">
+    <h3>Low Exposure</h3>
+    <img src="data/low.jpg" alt="Image" width="400px">
+    <h3>Medium Exposure</h3>
+    <img src="data/middle.jpg" alt="Image" width="400px">
+    <h3>High Exposure</h3>
+    <img src="data/high.jpg" alt="Image" width="400px">
+
+    <h2>LDR Merging</h2>
+    <h3>Naive</h3>
+    <h4>Log Irradiance for Low, Med, High Exposure</h4>
+    <img src="data/naive_irr.png" alt="Image" width="400px">
+    <h4>Combined HDR Log Irradiance</h4>
+    <img src="data/naive_merge.png" alt="Image" width="400px">
+    <h3>Accounting for Under- and Over-exposure</h3>
+    <h4>Log Irradiance for Low, Med, High Exposure</h4>
+    <img src="data/filtered_irr.png" alt="Image" width="400px">
+    <h4>Combined HDR Log Irradiance</h4>
+    <img src="data/filtered_merge.png" alt="Image" width="400px">
+    <h3>Response Function Estimation</h3>
+    <h4>Log Irradiance for Low, Med, High Exposure</h4>
+    <img src="data/estimate_irr.png" alt="Image" width="400px">
+    <h4>Combined HDR Log Irradiance</h4>
+    <img src="data/estimate_merged.png" alt="Image" width="400px">
+    <h4>Plot of Estimated Function g using lambda value of 70.</h4>
+    <img src="data/plot.png" alt="Image" width="400px">
+    <h3>Comparison of Each Method</h3>
+    <p> The first and second approach for LDR images are very similar since they have the same inputs.
+        The merged irradiance images from HDR differ since we used different procedures for each image.
+        Since the final stage irradiance is calculated by the estimated response function, the results were significanly different.</p>
+
+    <h2>Equirectangular Image</h2>
+    <img src="data/normal.jpg" alt="reflections" width="400px">
+    <img src="data/reflection.jpg" alt="normals" width="400px">
+    <img src="data/phi.jpg" alt="phi theta" width="400px">
+    <img src="data/pano.jpg" alt="panoramic transformation" width="400px">
+    <h3>Method for Implementing the Domain Transformation</h3>
+    <p> We calculate the Normal vectors following the formula on the slides and we calculate reflection vectors with R = V - 2 * dot(V,N) * N. Then we converted the reflection vectors from cartesian directional coordinates to spherical directional coordinates. We use the below formula to get phi & thetha coordinates as shown. We used the following configuration and formula to compute the equirectangular image. We avoid using for loops and so that vectorized operations can be carried out and the efficiency canbe improved</p>
+
+    <p>Viewing direction : 0, 0, -1</p>
+    <p>X: right, Y: down</p>
+    <p>Phi: atan2(-RX, RZ)</p>
+    <p>Theta: arccos(-RY)</p>
+    <p>Now that we have the phi/theta for both the mirror ball image and the equirectangular domain, use scipy's scipy.interpolate.griddata function to perform the transformation. We pass in only the nonzero values using the nonzero function.</p>
+
+    <p>Equirectangular image:</p>
+    <p>Phi: [0 - 2PI]</p>
+    <p>Theta: 0 - PI </p>
+
+    <h2>Background Image</h2>
+    <img src="data/back1.jpg" alt="background" width="400px">
+    <h2>Compositing Result #1</h2>
+    <img src="data/merged1.png" alt="composite" width="400px">
+    <h2>Intermediate Renderings #1</h2>
+    <img src="data/without_obj.png" alt="inter" width="400px">
+    <img src="data/with_obj1.png" alt="inter" width="400px">
+    <img src="data/mask1.png" alt="inter" width="400px">
+    <h2>Compositing Result #2</h2>
+    <img src="data/merged2.png" alt="composite" width="400px">
+    <h2>Intermediate Renderings #2</h2>
+    <img src="data/without_obj.png" alt="inter" width="400px">
+    <img src="data/with_obj2.png" alt="inter" width="400px">
+    <img src="data/mask2.png" alt="inter" width="400px">
+
+  </body>
+</html>
